@@ -1,7 +1,7 @@
 $(function() {
   //vacancy collapse
   $('.vacancy_click').on("click", function() {
-    $(this).toggleClass('orangelight');
+    $(this).toggleClass('vacancy_click-active');
 		$(this).closest('.vacancy_item').find('#demo')
 	})
   //vacancy collapse END
