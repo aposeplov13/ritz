@@ -14,6 +14,7 @@ $(function() {
   $(".project_thumbnail .clientcards_gallery").matchHeight();
   $(".offer_col .offer_text").matchHeight();
   $(".thumbnail_wrap").matchHeight();
+  //$(".contacts_text-col").matchHeight();
   // equal height END
   
   
