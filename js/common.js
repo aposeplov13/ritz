@@ -264,6 +264,32 @@ $('.press_list').slick({
   */
   //slider slider_worker END
 
+  $(".projectdetails_slider").slick({
+    rows: 1,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: '.control_next-projectdetails',
+    prevArrow: '.control_prev-projectdetails',
+    responsive: [
+      {
+        breakpoint: 1023,
+        settings: {
+          row: 1,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      }, 
+      {
+        breakpoint: 768,
+        settings: {
+          row: 1,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      } 
+    ]  
+  });
 
 
 
