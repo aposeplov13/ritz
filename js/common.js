@@ -3,14 +3,12 @@ $(function() {
   $('.vacancy_click').on("click", function() {
     $(this).toggleClass('vacancy_click-active');
     $(this).closest('.vacancy_item-top').next('.vacancy_specification').toggle();
-    //$(this).closest('.vacancy_item').find('.vacancy_specification').toggle();
 	});
   //vacancy collapse END
   
   //products
   $('.products_btn').on("click", function() {
     $('.products_btn').removeClass('products_btn-active');
-    //$(this).toggleClass('products_btn-active');
     var productFilter = $(this).attr('data-filter');   
     
     $('.filter').not('.' + productFilter).hide('3000');
@@ -73,9 +71,7 @@ $(function() {
     });
   ///servicedetails END
 
-
-  //alert("Hello");
-  // equal height
+  // equal column height
   $(".direction_thumbnail").matchHeight();
   $(".gallery_col").matchHeight();
   $(".project_thumbnail").matchHeight();
@@ -85,6 +81,7 @@ $(function() {
   $(".thumbnail_wrap").matchHeight();
   $(".presspage_thumbnail").matchHeight();
   $(".footer .footer_col").matchHeight();
+  // equal column height END 
   
   //slider press_list
   /*
@@ -185,48 +182,7 @@ $(function() {
   });
   //slider slider_patents END
 
-  /*
-  $(window).resize(function(){
-    if($(window).width() < 1279) {
-      $(".projects_gallery-company").slick({
-        infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        nextArrow: '.control_next-projects',
-        prevArrow: '.control_prev-projects',
-        responsive: [
-          {
-            breakpoint: 1280,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]  
-        });
-      } else {
-        $(".projects_gallery-company").unslick();
-      }
-    });*/
-    //slider projects_gallery-company END
-    
-
-
-    //slider slider_response
+  //slider slider_response
     /*
     $(".slider_response").slick({
     infinite: true,
