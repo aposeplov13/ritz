@@ -1,4 +1,72 @@
 $(function() {
+  //history timeline
+  function controlTimelineNext(control) {
+    $(control).on('click', function(){
+      //var periodEnd = $('.timeline_text-wrap .slick-current').prev().find('.timeline_text').data('date');
+      var periodEnd = $('.timeline_text-wrap .slick-current').find('.timeline_text').data('date');
+      var periodStart = $('.history_timeline-li[data-date="'+ periodEnd +'"]').prev().text();
+      $('.timeline_period .period_end').text(periodEnd);
+      $('.timeline_period .period_start').text(periodStart);
+    });
+  };
+  
+  function controlTimelinePrev(control) {
+    $(control).on('click', function(){
+      var periodEnd = $('.timeline_text-wrap .slick-current').next().find('.timeline_text').data('date');
+      var periodStart = $('.history_timeline-li[data-date="'+ periodEnd +'"]').prev().text();
+      $('.timeline_period .period_end').text(periodEnd);
+      $('.timeline_period .period_start').text(periodStart);
+    }); 
+  };
+  
+  var sliderTimelineList = {
+    infinite: false,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    nextArrow: '.control_prev-timeline',
+    prevArrow: '.control_next-timeline',
+    responsive: [
+      {
+        breakpoint: 1023,
+        settings: "unslick"
+      }
+    ] 
+  };
+  var sliderTimelineTextWrap = {
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: '.control_prev-timeline',
+    prevArrow: '.control_next-timeline'
+  };
+  function historyTimeline(){
+    $('.history_timeline-li').on('click', function(){
+      //метод заменяет ссылку на действие
+      //event.preventDefault();
+      $('.history_timeline-li').removeClass('timeline_selected timeline_active timeline_active-prev');
+      $(this).addClass('timeline_active');
+      $(this).prevAll('.history_timeline-li').addClass('timeline_selected');
+      $(this).prev('.history_timeline-li').addClass('timeline_active-prev');
+
+      //показываем текст контент
+      var timelineDate = $(this).data('date');
+      $('.timeline_text').removeClass('timeline_text-active');
+      $('.timeline_text[data-date="'+ timelineDate +'"]').addClass('timeline_text-active');
+      //показываем текст контент END
+      
+      //показываем текст контент
+      var periodEnd = $('.timeline_text-active').data('date');
+      var periodStart = $('.history_timeline-li[data-date="'+ periodEnd +'"]').prev().text();
+      $('.timeline_period .period_end').text(periodEnd);
+      $('.timeline_period .period_start').text(periodStart);
+      //показываем текст контент END
+    });
+  };
+
+  historyTimeline();
+  //history timeline END
+
+  
   //vacancy collapse
   $('.vacancy_click').on("click", function() {
     $(this).toggleClass('vacancy_click-active');
@@ -6,12 +74,13 @@ $(function() {
 	});
   //vacancy collapse END
   
+  $('.timeline_list').slick(sliderTimelineList);
   //media screen js
-  /*
+  
   enquire
     .register("(min-width: 1024px) and (max-width: 1279px)", {
         match : function() {
-          alert("1024");
+          //alert("1024");
           $(".projects_gallery").slick(settingProjectGallery2);
         },
         unmatch : function() {
@@ -20,17 +89,27 @@ $(function() {
     })
     .register("(min-width: 768px) and (max-width: 1023px)", {
         match : function() {
-          alert("768");
+          //alert("768");
           $(".projects_gallery").slick(settingProjectGallery2);
+          $('.timeline_text-wrap').slick(sliderTimelineTextWrap);
+          controlTimelinePrev('.control_prev-timeline');
+          controlTimelineNext('.control_next-timeline');
+          $('.timeline_contorl-mobile').before($('.timeline_period'));
+          $('.control_next-timeline').prependTo($('.timeline_contorl-mobile'));
         },
         unmatch : function() {
           $(".projects_gallery").slick('unslick');
-      }
-    })
-    .register("screen and (max-width: 767px)", {
+        }
+      })
+      .register("screen and (max-width: 767px)", {
         match : function() {
-          alert("320");
-          $(".projects_gallery").slick(settingProjectGallery);
+          //alert("320");
+          $('.timeline_text-wrap').slick(sliderTimelineTextWrap);
+          controlTimelinePrev('.control_prev-timeline');
+          controlTimelineNext('.control_next-timeline');
+          $('.timeline_contorl-mobile').before($('.timeline_period'));
+          $('.control_next-timeline').prependTo($('.timeline_contorl-mobile'));
+          //$(".projects_gallery").slick(settingProjectGallery);
         },
         unmatch : function() {
           $(".projects_gallery").slick('unslick');
@@ -41,14 +120,17 @@ $(function() {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1
-    }
+    };
     var settingProjectGallery2 = {
         infinite: true,
         rows: 3,
         slidesToScroll: 1,
         slidesPerRow: 1,
-      }
-      */
+    };
+
+
+
+
   //media screen js END
     
 
@@ -134,6 +216,37 @@ $(function() {
   $(".presscenter .press_testslider").matchHeight();
   $(".aboutcompany_col").matchHeight();
   // equal column height END 
+
+
+
+//test slider
+
+  
+
+
+
+
+/*
+$(".timeline_text-test").slick({
+  infinite: false,
+  arrows: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  fade: true,
+  asNavFor: '.history_timeline-ul'
+});
+*/
+//test slider END
+ /*
+  $('.control_prev-test').on("click", function() {
+    $('.history_timeline-ul .slick-slide').removeClass('activenext');
+    $('.history_timeline-ul .slick-current').next().addClass('activenext');
+  });
+  $('.control_next-test').on("click", function() {
+    $('.history_timeline-ul .history_timeline-li').removeClass('activenext');
+    $('.history_timeline-ul .slick-current').prev().addClass('activenext');
+  });
+*/
   
   //slider press_list
   $(".press_list").slick({
