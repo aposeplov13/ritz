@@ -142,6 +142,10 @@ $(function() {
       tabsPillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
       tabsCollapse('.servicedetails_pills');
       //servicedetails END
+      //productcard
+      tabsPillsCollapseOff('.productcard_pills','.pills_content');
+      tabsCollapse('.productcard_pills');
+      //productcard END
     },
     unmatch : function() {
     }
@@ -155,7 +159,11 @@ $(function() {
       //servicedetails
       tabsPillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
       tabsCollapse('.servicedetails_pills');
-      //servicedetails END     
+      //servicedetails END    
+      //productcard
+      tabsPillsCollapseOff('.productcard_pills','.pills_content');
+      tabsCollapse('.productcard_pills');
+      //productcard END 
     },
     unmatch : function() {
     }
@@ -180,6 +188,10 @@ $(function() {
       tabsPillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
       tabsCollapse('.servicedetails_pills');
       //servicedetails END
+      //productcard
+      tabsPillsCollapseOff('.productcard_pills','.pills_content');
+      tabsCollapse('.productcard_pills');
+      //productcard END
       //alert("768");
     },
     unmatch : function() {
@@ -220,6 +232,10 @@ $(function() {
       tabsCollapseOff('.servicedetails_pills');
       tabsPillsCollapse('.servicedetails_pills');
       //servicedetails END
+      //productcard
+      tabsCollapseOff('.productcard_pills');
+      tabsPillsCollapse('.productcard_pills');
+      //productcard END
     },
     unmatch : function() {
       $(".projects_gallery").slick('unslick');
@@ -251,6 +267,7 @@ $(function() {
   */
   //products END
   ///productcard
+  /*
     $('.productcard_pills').on("click", function() {
       $('.productcard_pills').removeClass('productcard_pills-active');
       var productFilter = $(this).attr('data-filter');   
@@ -270,6 +287,7 @@ $(function() {
         }
       }
     });
+    */
   ///productcard END
   ///servicedetails
     /*
