@@ -60,7 +60,6 @@ $(function() {
     });
   };
   // company / history timeline END
-  
   //index /slider press_list
   var sliderPressMainWrap = {
     infinite: true,
@@ -70,7 +69,6 @@ $(function() {
     nextArrow: '.control_next-presscenter',
     prevArrow: '.control_prev-presscenter',
   };
-
   var sliderPressList = {
     infinite: true,
     rows: 3,
@@ -84,7 +82,6 @@ $(function() {
       }, 
     ]  
   };
-  
   var sliderPressListMobile = {
     infinite: true,
     rows: 1,
@@ -98,7 +95,6 @@ $(function() {
     ]  
   };
   //index /slider press_list END
-
   //index /slider projects
   var settingProjectGallery = {
     infinite: true,
@@ -109,26 +105,21 @@ $(function() {
   };
   //index /slider projects END
 //GLOBAL VARABLES ANS FUNCTION END
-
 // START function for all media screen
   //history timeline
   historyTimeline();
   $('.timeline_list').slick(sliderTimelineList);
   //history timeline END
-  
   //index press list slider 
   $(".press_main-wrap").slick(sliderPressMainWrap);
   $(".press_list").slick(sliderPressList);
   //index press list slider END breakpoint(unslick) include in 1279
-  
-  
   //vacancy collapse
   $('.vacancy_click').on("click", function() {
     $(this).toggleClass('vacancy_click-active');
     $(this).closest('.vacancy_item-top').next('.vacancy_specification').toggle();
 	});
   //vacancy collapse END
-
   //company response/ fancybox
   $().fancybox({
 		selector : '[data-fancybox="images"]',
@@ -137,26 +128,40 @@ $(function() {
 	});
   //company response/ fancybox END
 // START function for all media screen END
-  
+
 //MEDIA SCREEN JS 
   enquire
   .register("screen and (min-width: 1280px)", {
     match : function() {
       //alert("1024");
+      //products
+      pillsCollapseOff('.products_btn','.products_row');
+      btnCollapse('.products_btn');
+      //products END
+      //servicedetails
+      pillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
+      tabsCollapse('.servicedetails_pills');
+      //servicedetails END
     },
     unmatch : function() {
     }
   })
   .register("screen and (min-width: 1024px) and (max-width: 1279px)", {
     match : function() {
-      //alert("1024");
+      //products
+      pillsCollapseOff('.products_btn','.products_row');
+      btnCollapse('.products_btn');
+      //products END
+      //servicedetails
+      pillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
+      tabsCollapse('.servicedetails_pills');
+      //servicedetails END     
     },
     unmatch : function() {
     }
   })
   .register("screen and (min-width: 768px) and (max-width: 1023px)", {
     match : function() {
-      //alert("768");
       //company history timeline
       $('.timeline_text-wrap').slick(sliderTimelineTextWrap);
       controlTimelinePrev('.control_prev-timeline');
@@ -164,15 +169,25 @@ $(function() {
       $('.timeline_contorl-mobile').before($('.timeline_period'));
       $('.control_next-timeline').prependTo($('.timeline_contorl-mobile'));
       //company history timeline END
-
       //index press list slider
       $(".press_list").slick(sliderPressListMobile);
-      //index press list slider
+      //index press list slider END
+      //products
+      pillsCollapseOff('.products_btn','.products_row');
+      btnCollapse('.products_btn');
+      //products END
+      //servicedetails
+      pillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
+      tabsCollapse('.servicedetails_pills');
+      //servicedetails END
+      //alert("768");
     },
     unmatch : function() {
       //index press list slider
       $(".press_list").slick('unslick');
-      //index press list slider
+      //index press list slider END
+      //products
+      //products END   
     }
   })
   .register("screen and (max-width: 767px)", {
@@ -197,6 +212,15 @@ $(function() {
       $(".company .slider_control-patents").appendTo($(".patents_block"));
         //company slider control patents END
       //company END
+      //products
+      btnCollapseOff('.products_btn');
+      pillsCollapse('.products_btn');
+      //products END
+      //servicedetails
+      tabsCollapseOff('.servicedetails_pills');
+      pillsCollapse('.servicedetails_pills');
+      //servicedetails END
+      
 
     },
     unmatch : function() {
@@ -204,36 +228,30 @@ $(function() {
     }
   });
 //MEDIA SCREEN JS END
-
-
   //media screen js END
-  
-
-
-
-
   //products
+  /*
   $('.products_btn').on("click", function() {
     $('.products_btn').removeClass('products_btn-active');
     var productFilter = $(this).attr('data-filter');   
     
     $('.filter').not('.' + productFilter).hide('3000');
     
-    if (window.matchMedia('(min-width: 768px)').matches){
-      $('.filter').filter('.' + productFilter).show('1000');
-    } else {
-      $(this).after($('.filter'));
-      if ($('.filter').filter('.' + productFilter).is(':visible')) {
-        $(this).removeClass('products_btn-active');
-        $('.filter').filter('.' + productFilter).hide('1000');
-      } else {
+      if (window.matchMedia('(min-width: 768px)').matches){
         $('.filter').filter('.' + productFilter).show('1000');
-        $(this).addClass('products_btn-active');  
+      } else {
+        $(this).after($('.filter'));
+        if ($('.filter').filter('.' + productFilter).is(':visible')) {
+          $(this).removeClass('products_btn-active');
+          $('.filter').filter('.' + productFilter).hide('1000');
+        } else {
+          $('.filter').filter('.' + productFilter).show('1000');
+          $(this).addClass('products_btn-active');  
+        }
       }
-    }
   });
+  */
   //products END
-  
   ///productcard
     $('.productcard_pills').on("click", function() {
       $('.productcard_pills').removeClass('productcard_pills-active');
@@ -256,6 +274,7 @@ $(function() {
     });
   ///productcard END
   ///servicedetails
+    /*
     $('.servicedetails_pills').on("click", function() {
       $('.servicedetails_pills').removeClass('servicedetails_pills-active');
       var productFilter = $(this).attr('data-filter');   
@@ -275,8 +294,80 @@ $(function() {
         }
       }
     });
-  ///servicedetails END
+    */
+    function tabsCollapse(tabs){
+      var activeTabs = tabs;
+      $(activeTabs).on("click", function() {
+        //activeTabs = (activeTabs.slice(1) + '-active');
+        //alert(activeTabs);
+        //$(activeTabs).removeClass(activeTabs);
+        $(activeTabs).removeClass(activeTabs.slice(1) + '-active');
+        var productFilter = $(this).attr('data-filter');   
+        $('.filter').not('.' + productFilter).addClass('filter_noactive');
+        $('.filter').filter('.' + productFilter).removeClass('filter_noactive');
+      });
+    };
 
+    function tabsCollapseOff(tabs){
+      var activeTabs = tabs;
+      $(activeTabs).off("click");
+    };
+    
+    function tabsPillsCollapse(pills, pillsContent){
+      var activePills = pills;
+      var pillsContainer = pillsContent;
+      $(activePills).off("click");
+      $('.filter').appendTo(pillsContainer);
+    };   
+
+
+    //pillsCollapse('.products_btn');
+
+    function btnCollapse(button){
+      var activeButton = button;
+        $(activeButton).on("click", function() {      
+          //alert("WOW");
+          $(activeButton).removeClass(activeButton.slice(1) + '-active');
+          var productFilter = $(this).attr('data-filter');
+          $('.filter').not('.' + productFilter).hide('3000');
+          $('.filter').filter('.' + productFilter).show('1000');
+          $(this).addClass(activeButton.slice(1) + '-active');  
+        });
+      };
+
+    function btnCollapseOff(button){
+      var activeButton = button;
+      $(activeButton).off("click");
+    };
+    
+    function pillsCollapse(pills){
+      var activePills = pills;
+      $(activePills).on("click", function() {      
+        //alert("WOW");
+        $(activePills).removeClass(activePills.slice(1) + '-active');
+        var productFilter = $(this).attr('data-filter');
+        $('.filter').not('.' + productFilter).hide('3000');
+        $(this).after($('.filter'));
+        if ($('.filter').filter('.' + productFilter).is(':visible')) {
+          //alert('visible');
+          $(this).removeClass(activePills.slice(1) + '-active');
+          $('.filter').filter('.' + productFilter).hide('1000');
+        } else {
+          //alert('not visible');
+          $('.filter').filter('.' + productFilter).show('1000');
+          $(this).addClass(activePills.slice(1) + '-active');  
+          }
+        });
+      };
+
+    function pillsCollapseOff(pills, pillsContent){
+      var activePills = pills;
+      var pillsContainer = pillsContent;
+      $(activePills).off("click");
+      $('.filter').appendTo(pillsContainer);
+    };
+
+  ///servicedetails END
   // equal column height
   $(".direction_thumbnail").matchHeight();
   $(".gallery_col").matchHeight();
@@ -291,8 +382,6 @@ $(function() {
   $(".presscenter .press_testslider").matchHeight();
   $(".aboutcompany_col").matchHeight();
   // equal column height END 
-  
-
   //slider slider_executives
   $('.slider_executives').slick({
     infinite: true,
@@ -311,7 +400,6 @@ $(function() {
     ]
   });
   //slider slider_executives END
-
   //slider projects_gallery-company
   $(".projects_gallery-company").slick({
     infinite: true,
@@ -355,7 +443,6 @@ $(function() {
     ]  
   });
   //slider slider_patents END
-
   //slider slider_response
   $(".slider_response").slick({
     infinite: true,
@@ -366,7 +453,6 @@ $(function() {
     nextArrow: '.control_next-response',
     prevArrow: '.control_prev-response',  
   });
-  
     //slider response_img-wrap
   $(".response_img-wrap").slick({
     infinite: true,
@@ -378,7 +464,6 @@ $(function() {
   });
     //slider response_img-wrap END
   //slider slider_response END
-
   //slider slider_worker
   $(".slider_worker").slick({
     infinite: true,
@@ -390,7 +475,6 @@ $(function() {
     adaptiveHeight: true  
   });
   //slider slider_worker END
-
   $(".projectdetails_slider").slick({
     rows: 1,
     infinite: true,
@@ -417,9 +501,4 @@ $(function() {
       } 
     ]  
   });
-
-
-
-
-
 });
