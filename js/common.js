@@ -139,7 +139,7 @@ $(function() {
       btnCollapse('.products_btn');
       //products END
       //servicedetails
-      pillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
+      tabsPillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
       tabsCollapse('.servicedetails_pills');
       //servicedetails END
     },
@@ -153,7 +153,7 @@ $(function() {
       btnCollapse('.products_btn');
       //products END
       //servicedetails
-      pillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
+      tabsPillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
       tabsCollapse('.servicedetails_pills');
       //servicedetails END     
     },
@@ -177,7 +177,7 @@ $(function() {
       btnCollapse('.products_btn');
       //products END
       //servicedetails
-      pillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
+      tabsPillsCollapseOff('.servicedetails_pills','.pills_content-servicedetails');
       tabsCollapse('.servicedetails_pills');
       //servicedetails END
       //alert("768");
@@ -218,10 +218,8 @@ $(function() {
       //products END
       //servicedetails
       tabsCollapseOff('.servicedetails_pills');
-      pillsCollapse('.servicedetails_pills');
+      tabsPillsCollapse('.servicedetails_pills');
       //servicedetails END
-      
-
     },
     unmatch : function() {
       $(".projects_gallery").slick('unslick');
@@ -307,13 +305,30 @@ $(function() {
         $('.filter').filter('.' + productFilter).removeClass('filter_noactive');
       });
     };
-
+    
     function tabsCollapseOff(tabs){
       var activeTabs = tabs;
       $(activeTabs).off("click");
     };
-    
-    function tabsPillsCollapse(pills, pillsContent){
+
+    function tabsPillsCollapse(pills){
+      var activePills = pills;
+      $(activePills).on("click", function(){
+        $(activePills).removeClass(activePills.slice(1) + '-active');
+        var productFilter = $(this).attr('data-filter');
+        $('.filter').not('.' + productFilter).addClass('filter_noactive');
+        $(this).after($('.filter'));
+        if ($('.filter').filter('.' + productFilter).is(':visible')) {
+          $(this).removeClass(activePills.slice(1) + '-active');
+          $('.filter').filter('.' + productFilter).addClass('filter_noactive');
+        } else {
+          $('.filter').filter('.' + productFilter).removeClass('filter_noactive');
+          $(this).addClass(activePills.slice(1) + '-active');  
+        }
+      });
+    };
+   
+    function tabsPillsCollapseOff(pills, pillsContent){
       var activePills = pills;
       var pillsContainer = pillsContent;
       $(activePills).off("click");
