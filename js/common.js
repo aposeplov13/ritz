@@ -176,6 +176,8 @@ $(function() {
     slidesToScroll: 1,
     nextArrow: '.control_next-mainprojects',
     prevArrow: '.control_prev-mainprojects',
+    autoplay: true,
+    autoplaySpeed: 5000,
   };
   //index /slider projects END
   //company /slider_executives
@@ -185,6 +187,8 @@ $(function() {
     slidesToScroll: 1,
     nextArrow: '.control_next-executives',
     prevArrow: '.control_prev-executives',
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 768,
@@ -203,6 +207,8 @@ $(function() {
     slidesToScroll: 1,
     nextArrow: '.control_next-projects',
     prevArrow: '.control_prev-projects',
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1024,
@@ -228,6 +234,8 @@ $(function() {
     slidesToScroll: 1,
     nextArrow: '.control_next-patents',
     prevArrow: '.control_prev-patents',
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 768,
@@ -247,7 +255,9 @@ $(function() {
     fade: true,
     asNavFor: '.response_img-wrap',
     nextArrow: '.control_next-response',
-    prevArrow: '.control_prev-response',  
+    prevArrow: '.control_prev-response',
+    autoplay: true,
+    autoplaySpeed: 5000,  
   };
     //slider response_img-wrap
   var sliderResponseImageWrap = {
@@ -256,7 +266,9 @@ $(function() {
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
-    asNavFor: '.slider_response'
+    asNavFor: '.slider_response',
+    autoplay: true,
+    autoplaySpeed: 5000,
   };
     //slider response_img-wrap END
   //company / slider_response END
@@ -269,7 +281,9 @@ $(function() {
     nextArrow: '.control_next-worker',
     prevArrow: '.control_prev-worker',
     adaptiveHeight: true,
-    asNavFor: '.workers_mainslider'  
+    asNavFor: '.workers_mainslider',
+    autoplay: true,
+    autoplaySpeed: 5000,  
   };
   //index /slider_worker END
   //index /workers_mainslider
@@ -277,7 +291,9 @@ $(function() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true  
+    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 5000,  
   };
   //index /workers_mainslider END
   //projectdetails_slider
@@ -288,6 +304,8 @@ $(function() {
     slidesToScroll: 1,
     nextArrow: '.control_next-projectdetails',
     prevArrow: '.control_prev-projectdetails',
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1023,
@@ -469,8 +487,9 @@ $(function() {
       $('.timeline_control-mobile').before($('.timeline_period'));
       $('.control_next-timeline').prependTo($('.timeline_control-mobile'));
       //company history timeline END
-      //index presscenter control END
+      //index
       $(".projects_gallery").slick(settingProjectGallery);
+      //index
       //products
       btnCollapseOff('.products_btn');
       pillsCollapse('.products_btn');
