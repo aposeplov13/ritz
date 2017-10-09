@@ -27,68 +27,8 @@
 	<!-- Load Custom CSS END -->
 </head>
 <body>
-
-  <!-- develop -->
-	<div class="container develop">
-		<div class="row develop_pills">
-			<div class="col-md-9">
-				<ul class="nav nav-pills develop_pills">
-					<li class="nav-item active">
-						<a class="nav-link develop_link" href="index.html">home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="partners.html">partners</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="products.html">products</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link" href="projectdetails.html">project details</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="projects.html">projects</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="productcard.html">product card</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link" href="company.html">company</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="services.html">services</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="partitioncard.html">partition card</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="servicedetails.html">service details</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="vacancy.html">vacancy</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="news.html">news</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="contactpage.html">contact</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="presscenter.html">press center</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link develop_link success" href="error404.html">error404</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-3">
-				<div class="row develop_badge">
-					<span class="badge badge-success develop_link-badge">last update</span>	
-					<span class="badge badge-danger develop_link-badge">28.09 12:22</span>
-					<span class="badge badge-primary develop_link-badge">V-151</span>
-				</div>
-			</div>
-		</div>
-	</div><!-- develop END -->
+	<!-- preloader --><script>var preload=document.createElement("div");preload.className="preloader",preload.innerHTML='<div class="preloader_text">РИТЦ</div><div class="spinner"></div>',document.body.appendChild(preload),window.addEventListener("load",function(){preload.className+=" preloader-fade",setTimeout(function(){preload.style.display="none"},600)});</script>
+      <style>.preloader{height:100%;width:100%;background:#fff;position:fixed;left:0;top:0;z-index:99999;-webkit-perspective:1600px;perspective:1600px;-webkit-perspective-origin:20% 50%;perspective-origin:20% 50%;-webkit-transition:.5s all;transition:.5s all;opacity:1}.preloader_text{font-family:Arial,Helvetica,sans-serif;font-size:1.2rem;font-weight:700;color:#3e2723;width:52px;height:67px;position:absolute;top:2.2rem;bottom:0;left:0;right:0;margin:auto;-webkit-animation:ico 9s infinite linear;animation:ico 9s infinite linear;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.spinner{width:80px;height:80px;border:2px solid #f3f3f3;border-top:3px solid #ff9800;-webkit-border-radius:100%;border-radius:100%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.preloader.preloader-fade{opacity:0}@-webkit-keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes ico{from{-webkit-transform:rotateY(0);transform:rotateY(0)}to{-webkit-transform:rotateY(360deg);transform:rotateY(360deg)}}@keyframes ico{from{-webkit-transform:rotateY(0);transform:rotateY(0)}to{-webkit-transform:rotateY(360deg);transform:rotateY(360deg)}}</style><!-- preloader END-->
   <!-- header -->
   <div class="container-fluid header">
     <div class="container header_block">
@@ -108,7 +48,7 @@
                   <p class="contacts_text contacts_text-tel">тел.:</p>
                 </div>
                 <div class="col-xs-8 col-sm-9 col-md-9">
-                  <p class="contacts_date">8 800 900 88 22</p>
+                  <a href="tel:8 800 900 88 22" class="contacts_date contacts_date-link">8 800 900 88 22</a>
                 </div>
               </div><!-- phone END -->
               <!-- fax -->
@@ -117,7 +57,7 @@
                   <p class="contacts_text">факс.:</p>
                 </div>
                 <div class="col-xs-9 col-sm-9 col-md-9">
-                  <p class="contacts_date">8 800 900 88 22</p>
+                  <a href="tel:8 800 900 88 22" class="contacts_date contacts_date-link">8 800 900 88 22</a>
                 </div>
               </div><!-- fax END -->
               <a href="#" class="contacts_link">Заявка на консультацию</a>                  
@@ -129,7 +69,7 @@
                   <p class="contacts_text">Общие вопросы:</p>
                 </div> 
                 <div class="col-xs-4 col-md-5">
-                  <p class="contacts_date">info@ritz.ru</p>
+                  <a href="mailto:info@ritz.ru" class="contacts_date contacts_date-link">info@ritz.ru</a>
                 </div> 
               </div>
               <div class="row">
@@ -137,7 +77,7 @@
                   <p class="contacts_text">Коммерческий отдел:</p>
                 </div> 
                 <div class="col-xs-4 col-md-5">
-                  <p class="contacts_date">sales@ritz.ru</p>
+                  <a href="mailto:sales@ritz.ru" class="contacts_date contacts_date-link">sales@ritz.ru</a>
                 </div> 
               </div>
               <div class="row">
@@ -145,7 +85,7 @@
                   <p class="contacts_text">Отдел поставок:</p>
                 </div> 
                 <div class="col-xs-4 col-md-5">
-                  <p class="contacts_date">snab@ritz.ru</p>
+                  <a href="mailto:snab@ritz.ru" class="contacts_date contacts_date-link">snab@ritz.ru</a>
                 </div> 
               </div>
             </div><!-- col-lg-4 END-->
@@ -209,63 +149,63 @@
     </div>
   </div><!-- mainbanner END -->
   <!-- workers -->
-      <div class="container-fluid bg_gear-wrap workers">
-        <!-- workers_block -->
-        <div class="container bg_gear workers_block">
-          <div class="slider_control-worker">
-            <button class="btn control_next-worker"><img class="slider_img-left" src="img\company\slider_left.png" alt=""></button>
-            <button class="btn control_prev-worker"><img class="slider_img-right" src="img\company\slider_right.png" alt=""></button>
+  <div class="container-fluid bg_gear-wrap workers">
+    <!-- workers_block -->
+    <div class="container bg_gear workers_block">
+      <div class="slider_control-worker">
+        <button class="btn control_next-worker"><img class="slider_img-left" src="img\company\slider_left.png" alt=""></button>
+        <button class="btn control_prev-worker"><img class="slider_img-right" src="img\company\slider_right.png" alt=""></button>
+      </div>
+      <!-- workers_row -->
+      <div class="row workers_mainslider">
+        <div class="slider_item col-xs-12">
+          <div class="col-sm-5 col-md-5 col-lg-5 workers_avatar">
+            <img src="img/index/worker.png" alt="" class="workers_img img-responsive">
           </div>
-          <!-- workers_row -->
-          <div class="row workers_mainslider">
-            <div class="slider_item col-xs-12">
-              <div class="col-sm-5 col-md-5 col-lg-5 workers_avatar">
-                <img src="img/index/worker.png" alt="" class="workers_img img-responsive">
-              </div>
-              <div class="col-sm-7 col-md-7 col-lg-7 workers_description">
-                <p class="workers_count">464</p>
-                <p class="workers_title">сотрудника</p>
-                <p class="workers_definition">Pаботает на предприятии сегодня</p>
-                <button class="btn btn_learnmore"><span class="icon-wrap">Узнать больше</span></button>
-              </div>
-            </div>
-            <div class="slider_item col-xs-12">
-              <div class="col-sm-5 col-md-5 col-lg-5 workers_avatar">
-                <img src="img/index/worker.png" alt="" class="workers_img img-responsive">
-              </div>
-              <div class="col-sm-7 col-md-7 col-lg-7 workers_description">
-                <p class="workers_count">300</p>
-                <p class="workers_title">рабочих</p>
-                <p class="workers_definition">Pаботает на предприятии сегодня</p>
-                <button class="btn btn_learnmore"><span class="icon-wrap">Узнать больше</span></button>
-              </div>
-            </div>
-            <div class="slider_item col-xs-12">
-              <div class="col-sm-5 col-md-5 col-lg-5 workers_avatar">
-                <img src="img/index/worker.png" alt="" class="workers_img img-responsive">
-              </div>
-              <div class="col-sm-7 col-md-7 col-lg-7 workers_description">
-                <p class="workers_count">50</p>
-                <p class="workers_title">водителей</p>
-                <p class="workers_definition">Pаботает на предприятии сегодня</p>
-                <button class="btn btn_learnmore"><span class="icon-wrap">Узнать больше</span></button>
-              </div>
-            </div>
-          </div><!-- workers_row END -->
-        </div><!-- workers_block END -->
-        <!-- workers_slider -->
-        <div class="workers_slider">
-          <div class="container slider_block">
-            <div class="row slider_row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 slider_worker">
-                <p class="slider_text">Наши сотрудники великолепные профессионалы своего дела. Они регулярно проходят курсы повышения квалификации, любят своё дело и работают на совесть и качество .</p>
-                <p class="slider_text">Они регулярно проходят курсы повышения квалификации, любят своё дело и работают на совесть и качество. Наши сотрудники великолепные профессионалы своего дела. </p>
-                <p class="slider_text">Наши сотрудники великолепные профессионалы своего дела. Наши сотрудники великолепные профессионалы своего делаНаши сотрудники великолепные профессионалы своего делаОни регулярно проходят курсы повышения квалификации, любят своё дело и работают на совесть и качество .</p>
-              </div>
-            </div>
+          <div class="col-sm-7 col-md-7 col-lg-7 workers_description">
+            <p class="workers_count">464</p>
+            <p class="workers_title">сотрудника</p>
+            <p class="workers_definition">Pаботает на предприятии сегодня</p>
+            <button class="btn btn_learnmore"><span class="icon-wrap">Узнать больше</span></button>
           </div>
-        </div><!-- workers_slider END -->
-      </div><!-- workers END -->
+        </div>
+        <div class="slider_item col-xs-12">
+          <div class="col-sm-5 col-md-5 col-lg-5 workers_avatar">
+            <img src="img/index/worker.png" alt="" class="workers_img img-responsive">
+          </div>
+          <div class="col-sm-7 col-md-7 col-lg-7 workers_description">
+            <p class="workers_count">300</p>
+            <p class="workers_title">рабочих</p>
+            <p class="workers_definition">Pаботает на предприятии сегодня</p>
+            <button class="btn btn_learnmore"><span class="icon-wrap">Узнать больше</span></button>
+          </div>
+        </div>
+        <div class="slider_item col-xs-12">
+          <div class="col-sm-5 col-md-5 col-lg-5 workers_avatar">
+            <img src="img/index/worker.png" alt="" class="workers_img img-responsive">
+          </div>
+          <div class="col-sm-7 col-md-7 col-lg-7 workers_description">
+            <p class="workers_count">50</p>
+            <p class="workers_title">водителей</p>
+            <p class="workers_definition">Pаботает на предприятии сегодня</p>
+            <button class="btn btn_learnmore"><span class="icon-wrap">Узнать больше</span></button>
+          </div>
+        </div>
+      </div><!-- workers_row END -->
+    </div><!-- workers_block END -->
+    <!-- workers_slider -->
+    <div class="workers_slider">
+      <div class="container slider_block">
+        <div class="row slider_row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 slider_worker">
+            <p class="slider_text">Наши сотрудники великолепные профессионалы своего дела. Они регулярно проходят курсы повышения квалификации, любят своё дело и работают на совесть и качество .</p>
+            <p class="slider_text">Они регулярно проходят курсы повышения квалификации, любят своё дело и работают на совесть и качество. Наши сотрудники великолепные профессионалы своего дела. </p>
+            <p class="slider_text">Наши сотрудники великолепные профессионалы своего дела. Наши сотрудники великолепные профессионалы своего делаНаши сотрудники великолепные профессионалы своего делаОни регулярно проходят курсы повышения квалификации, любят своё дело и работают на совесть и качество .</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- workers_slider END -->
+  </div><!-- workers END -->
   <!-- projects -->
     <div class="container-fluid projects">
       <!-- projects_block -->
@@ -459,7 +399,7 @@
 													<p class="contacts_text-footer">тел.:</p>
 												</div>
 												<div class="col-xs-9 col-sm-9 col-md-9">
-													<p class="contacts_date-footer">8 800 900 88 22</p>
+													<a href="tel:8 800 900 88 22"  class="contacts_date-footer contacts_date-linkfooter">8 800 900 88 22</a>
 												</div>
 											</div><!-- phone-footer END -->
 											<!-- fax-footer -->
@@ -468,7 +408,7 @@
 													<p class="contacts_text-footer">факс.:</p>
 												</div>
 												<div class="col-xs-9 col-sm-9 col-md-9">
-													<p class="contacts_date-footer">8 800 900 88 22</p>
+													<a href="tel:8 800 900 88 22"  class="contacts_date-footer contacts_date-linkfooter">8 800 900 88 22</a>
 												</div>
 											</div><!-- fax-footer END -->	
 										</div><!-- footer_col END -->
@@ -493,7 +433,7 @@
 													<p class="contacts_text-footer">Общие вопросы:</p>
 												</div>
 												<div class="col-xs-4 col-sm-5 col-lg-6 emails_wrap">
-													<p class="contacts_text-footer">info@ritz.ru</p>
+													<a href="mailto:info@ritz.ru" class="contacts_text-footer contacts_date-linkfooter">info@ritz.ru</a>
 												</div>
 											</div><!-- row END -->
 											<!-- row -->
@@ -502,7 +442,7 @@
 													<p class="contacts_text-footer">Коммерческий отдел:</p>
 												</div>
 												<div class="col-xs-4 col-sm-5 col-lg-6 emails_wrap">
-													<p class="contacts_text-footer">sales@ritz.ru</p>
+													<a href="mailto:sales@ritz.ru" class="contacts_text-footer contacts_date-linkfooter">sales@ritz.ru</a>
 												</div>
 											</div><!-- row END -->
 											<!-- row -->
@@ -511,7 +451,7 @@
 													<p class="contacts_text-footer">Отдел поставок:</p>
 												</div>
 												<div class="col-xs-4 col-sm-5 col-lg-6 emails_wrap">
-													<p class="contacts_text-footer">snab@ritz.ru</p>
+													<a href="mailto:snab@ritz.ru" class="contacts_text-footer contacts_date-linkfooter">snab@ritz.ru</a>
 												</div>
 											</div><!-- row END -->
 										</div><!-- footer_col -->

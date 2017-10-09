@@ -38,6 +38,8 @@
 	<!-- Load Custom CSS Compiled without JS END -->
 </head>
 <body class="error404-body">
+		<!-- preloader --><script>var preload=document.createElement("div");preload.className="preloader",preload.innerHTML='<div class="preloader_text">РИТЦ</div><div class="spinner"></div>',document.body.appendChild(preload),window.addEventListener("load",function(){preload.className+=" preloader-fade",setTimeout(function(){preload.style.display="none"},600)});</script>
+      <style>.preloader{height:100%;width:100%;background:#fff;position:fixed;left:0;top:0;z-index:99999;-webkit-perspective:1600px;perspective:1600px;-webkit-perspective-origin:20% 50%;perspective-origin:20% 50%;-webkit-transition:.5s all;transition:.5s all;opacity:1}.preloader_text{font-family:Arial,Helvetica,sans-serif;font-size:1.2rem;font-weight:700;color:#3e2723;width:52px;height:67px;position:absolute;top:2.2rem;bottom:0;left:0;right:0;margin:auto;-webkit-animation:ico 9s infinite linear;animation:ico 9s infinite linear;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.spinner{width:80px;height:80px;border:2px solid #f3f3f3;border-top:3px solid #ff9800;-webkit-border-radius:100%;border-radius:100%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.preloader.preloader-fade{opacity:0}@-webkit-keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes ico{from{-webkit-transform:rotateY(0);transform:rotateY(0)}to{-webkit-transform:rotateY(360deg);transform:rotateY(360deg)}}@keyframes ico{from{-webkit-transform:rotateY(0);transform:rotateY(0)}to{-webkit-transform:rotateY(360deg);transform:rotateY(360deg)}}</style><!-- preloader END-->
 		<!-- header -->
   <div class="container-fluid header">
     <div class="container header_block">
@@ -57,7 +59,7 @@
                   <p class="contacts_text contacts_text-tel">тел.:</p>
                 </div>
                 <div class="col-xs-8 col-sm-9 col-md-9">
-                  <p class="contacts_date">8 800 900 88 22</p>
+                  <a href="tel:8 800 900 88 22" class="contacts_date contacts_date-link">8 800 900 88 22</a>
                 </div>
               </div><!-- phone END -->
               <!-- fax -->
@@ -66,7 +68,7 @@
                   <p class="contacts_text">факс.:</p>
                 </div>
                 <div class="col-xs-9 col-sm-9 col-md-9">
-                  <p class="contacts_date">8 800 900 88 22</p>
+                  <a href="tel:8 800 900 88 22" class="contacts_date contacts_date-link">8 800 900 88 22</a>
                 </div>
               </div><!-- fax END -->
               <a href="#" class="contacts_link">Заявка на консультацию</a>                  
@@ -78,7 +80,7 @@
                   <p class="contacts_text">Общие вопросы:</p>
                 </div> 
                 <div class="col-xs-4 col-md-5">
-                  <p class="contacts_date">info@ritz.ru</p>
+                  <a href="mailto:info@ritz.ru" class="contacts_date contacts_date-link">info@ritz.ru</a>
                 </div> 
               </div>
               <div class="row">
@@ -86,7 +88,7 @@
                   <p class="contacts_text">Коммерческий отдел:</p>
                 </div> 
                 <div class="col-xs-4 col-md-5">
-                  <p class="contacts_date">sales@ritz.ru</p>
+                  <a href="mailto:sales@ritz.ru" class="contacts_date contacts_date-link">sales@ritz.ru</a>
                 </div> 
               </div>
               <div class="row">
@@ -94,7 +96,7 @@
                   <p class="contacts_text">Отдел поставок:</p>
                 </div> 
                 <div class="col-xs-4 col-md-5">
-                  <p class="contacts_date">snab@ritz.ru</p>
+                  <a href="mailto:snab@ritz.ru" class="contacts_date contacts_date-link">snab@ritz.ru</a>
                 </div> 
               </div>
             </div><!-- col-lg-4 END-->
@@ -205,7 +207,7 @@
 													<p class="contacts_text-footer">тел.:</p>
 												</div>
 												<div class="col-xs-9 col-sm-9 col-md-9">
-													<p class="contacts_date-footer">8 800 900 88 22</p>
+													<a href="tel:8 800 900 88 22"  class="contacts_date-footer contacts_date-linkfooter">8 800 900 88 22</a>
 												</div>
 											</div><!-- phone-footer END -->
 											<!-- fax-footer -->
@@ -214,7 +216,7 @@
 													<p class="contacts_text-footer">факс.:</p>
 												</div>
 												<div class="col-xs-9 col-sm-9 col-md-9">
-													<p class="contacts_date-footer">8 800 900 88 22</p>
+													<a href="tel:8 800 900 88 22"  class="contacts_date-footer contacts_date-linkfooter">8 800 900 88 22</a>
 												</div>
 											</div><!-- fax-footer END -->	
 										</div><!-- footer_col END -->
@@ -239,7 +241,7 @@
 													<p class="contacts_text-footer">Общие вопросы:</p>
 												</div>
 												<div class="col-xs-4 col-sm-5 col-lg-6 emails_wrap">
-													<p class="contacts_text-footer">info@ritz.ru</p>
+													<a href="mailto:info@ritz.ru" class="contacts_text-footer contacts_date-linkfooter">info@ritz.ru</a>
 												</div>
 											</div><!-- row END -->
 											<!-- row -->
@@ -248,7 +250,7 @@
 													<p class="contacts_text-footer">Коммерческий отдел:</p>
 												</div>
 												<div class="col-xs-4 col-sm-5 col-lg-6 emails_wrap">
-													<p class="contacts_text-footer">sales@ritz.ru</p>
+													<a href="mailto:sales@ritz.ru" class="contacts_text-footer contacts_date-linkfooter">sales@ritz.ru</a>
 												</div>
 											</div><!-- row END -->
 											<!-- row -->
@@ -257,7 +259,7 @@
 													<p class="contacts_text-footer">Отдел поставок:</p>
 												</div>
 												<div class="col-xs-4 col-sm-5 col-lg-6 emails_wrap">
-													<p class="contacts_text-footer">snab@ritz.ru</p>
+													<a href="mailto:snab@ritz.ru" class="contacts_text-footer contacts_date-linkfooter">snab@ritz.ru</a>
 												</div>
 											</div><!-- row END -->
 										</div><!-- footer_col -->
